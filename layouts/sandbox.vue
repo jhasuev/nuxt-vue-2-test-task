@@ -1,11 +1,11 @@
 <template>
-  <div>
-    content
+  <div class="container">
+    <Nuxt />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'LayoutDefault',
 }
 </script>

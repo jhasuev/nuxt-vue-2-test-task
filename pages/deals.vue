@@ -1,6 +1,6 @@
 <template>
   <div>
-    Склад
+    Сделки
   </div>
 </template>
 

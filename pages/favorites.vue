@@ -1,6 +1,6 @@
 <template>
   <div>
-    Склад
+    Избранное
   </div>
 </template>
 

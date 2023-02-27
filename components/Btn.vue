@@ -8,11 +8,12 @@
       'btn--disabled': disabled,
       'btn--full': full,
     }"
+    @click="$emit('click')"
   >
-    <span
+    <i
       v-if="icon"
       class="btn__icon material-symbols-outlined"
-    >{{ icon }}</span>
+    >{{ icon }}</i>
 
     <span
       v-if="label"

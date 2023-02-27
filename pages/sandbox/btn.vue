@@ -48,7 +48,6 @@
 
 <script>
 export default {
-  name: 'SandboxBtn',
   layout: 'sandbox'
 }
 </script>

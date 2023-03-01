@@ -47,9 +47,7 @@
 </template>
 
 <script>
-export default {
-  layout: 'sandbox'
-}
+export default {}
 </script>
 
 <style>

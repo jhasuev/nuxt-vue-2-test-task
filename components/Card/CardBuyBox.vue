@@ -7,14 +7,14 @@
     <div class="card-buy-box__actions">
       <template>
         <btn
-          v-if="!isInFavorite"
+          v-if="!favorite && !paid && !basket"
           view="gray"
           full
           label="Добавить в сделки"
-          @click="$emit('add-to-deals')"
+          @click="$emit('add-to-basket')"
         />
         <btn
-          v-else-if="isPaid"
+          v-else-if="paid"
           disabled
           bordered
           full
@@ -30,7 +30,7 @@
       </template>
       
       <btn
-        v-if="isInFavorite"
+        v-if="favorite"
         view="blue"
         icon="favorite"
         @click="$emit('remove-from-favorite')"
@@ -52,8 +52,9 @@ export default {
     price: { type: Number, default: 0 },
     quantity: { type: Number, default: 0 },
     priceForUnit: { type: Number, default: 0 },
-    isInFavorite: { type: Boolean, default: false },
-    isPaid: { type: Boolean, default: false },
+    favorite: { type: Boolean, default: false },
+    paid: { type: Boolean, default: false },
+    basket: { type: Boolean, default: false },
   },
   computed: {
     getCharacters() {

@@ -23,7 +23,7 @@ export default {
       links: [
         { to: '/favorites', icon: 'favorite', label: 'Избранное' },
         { to: '/', icon: 'widgets', label: 'Склад' },
-        { to: '/deals', icon: 'local_mall', label: 'Сделки' },
+        { to: '/basket', icon: 'local_mall', label: 'Сделки' },
       ],
     }
   },
@@ -33,7 +33,6 @@ export default {
 <style lang="scss" scoped>
 
 .top-menu {
-  margin-top: 20px;
   display: flex;
   justify-content: flex-end;
   gap: 16px;

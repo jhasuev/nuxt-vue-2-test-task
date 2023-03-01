@@ -1,7 +1,5 @@
 <template>
   <div class="container">
-    <TopSquere />
-    <TopMenu />
     <Nuxt />
   </div>
 </template>

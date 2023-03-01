@@ -9,7 +9,6 @@
 
 <script>
 export default {
-  layout: 'sandbox',
   data() {
     return {
       tabs1: {

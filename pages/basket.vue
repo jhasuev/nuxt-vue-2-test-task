@@ -1,12 +1,12 @@
 <template>
   <goods
-    :goods="$store.getters['goods/getAllGoods']"
+    :goods="$store.getters['goods/getBasketGoods']"
   />
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'BasketPage',
   layout: 'goods',
 }
 </script>

@@ -1,11 +1,12 @@
 <template>
-  <div>
-    Избранное
-  </div>
+  <goods
+    :goods="$store.getters['goods/getFavoriteGoods']"
+  />
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'FavoritesPage',
+  layout: 'goods',
 }
 </script>

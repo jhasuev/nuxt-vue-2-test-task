@@ -6,7 +6,7 @@
     >
       <card
         v-bind="item"
-        @add-to-deals="onClick('add-to-deals', $event)"
+        @add-to-basket="onClick('add-to-basket', $event)"
         @add-to-favorite="onClick('add-to-favorite', $event)"
         @remove-from-favorite="onClick('remove-from-favorite', $event)"
         @pay="onClick('pay', $event)"
@@ -17,7 +17,6 @@
 
 <script>
 export default {
-  layout: 'sandbox',
   data() {
     return {
       list: [
@@ -38,8 +37,8 @@ export default {
           price: 33000,
           quantity: 3,
           priceForUnit: 11000,
-          isInFavorite: false,
-          isPaid: false,
+          favorite: false,
+          paid: false,
         },
         {
           id: 2,
@@ -58,8 +57,8 @@ export default {
           price: 33000,
           quantity: 3,
           priceForUnit: 11000,
-          isInFavorite: true,
-          isPaid: false,
+          favorite: true,
+          paid: false,
         },
         {
           id: 3,
@@ -78,8 +77,8 @@ export default {
           price: 33000,
           quantity: 3,
           priceForUnit: 11000,
-          isInFavorite: true,
-          isPaid: true,
+          favorite: true,
+          paid: true,
         },
       ],
     }

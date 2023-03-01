@@ -7,7 +7,7 @@
     <CardBuyBox
       class="card__buy-box"
       v-bind="$props"
-      @add-to-deals="$emit('add-to-deals', id)"
+      @add-to-basket="$emit('add-to-basket', id)"
       @add-to-favorite="$emit('add-to-favorite', id)"
       @remove-from-favorite="$emit('remove-from-favorite', id)"
       @pay="$emit('pay', id)"
@@ -30,8 +30,9 @@ export default {
     price: { type: Number, default: 0 },
     quantity: { type: Number, default: 0 },
     priceForUnit: { type: Number, default: 0 },
-    isInFavorite: { type: Boolean, default: false },
-    isPaid: { type: Boolean, default: false },
+    favorite: { type: Boolean, default: false },
+    paid: { type: Boolean, default: false },
+    basket: { type: Boolean, default: false },
   },
 }
 </script>

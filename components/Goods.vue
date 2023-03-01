@@ -7,7 +7,7 @@
     </div>
 
     <div
-      v-if="getFilteredGoods.length"
+      v-show="getFilteredGoods.length"
       class="goods__list"
     >
       <div
@@ -25,9 +25,9 @@
       </div>
     </div>
 
-    <div v-else class="goods__no-goods">
-      <template v-if="goods.length">Ничего не найдено</template>
-      <template v-else>Пусто</template>
+    <div v-show="!getFilteredGoods.length" class="goods__no-goods">
+      <span v-show="goods.length">Ничего не найдено</span>
+      <span v-show="!goods.length">Пусто</span>
     </div>
   </div>
 </template>
@@ -69,11 +69,16 @@ export default {
       return goods
     },
   },
+  mounted() {
+    console.log('mounted');
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .goods {
+  padding-bottom: 40px;
+
   &__header {
     margin-top: 77px;
 

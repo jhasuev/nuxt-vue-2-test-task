@@ -5,6 +5,12 @@ const filterGoods = (state) => state.goods.map(item => {
   return item
 })
 
+const toggleIdToState = (state, action, name, id) => {
+  const goods = new Set(state[name])
+  goods[action](id)
+  state[name] = [...goods]
+}
+
 export const state = () => ({
   goods: [], // все товары
   
@@ -33,32 +39,24 @@ export const mutations = {
   },
 
   SET_FAVORITE(state, id) {
-    const goods = new Set(state.favorites)
-    goods.add(id)
-    state.favorites = [...goods]
+    toggleIdToState(state, 'add', 'favorites', id)
   },
 
   UNSET_FAVORITE(state, id) {
-    const goods = new Set(state.favorites)
-    goods.delete(id)
-    state.favorites = [...goods]
+    toggleIdToState(state, 'delete', 'favorites', id)
   },
 
   SET_BASKET(state, id) {
-    const goods = new Set(state.basket)
-    goods.add(id)
-    state.basket = [...goods]
+    toggleIdToState(state, 'add', 'basket', id)
   },
 
   SET_PAID(state, id) {
-    const goods = new Set(state.paid)
-    goods.add(id)
-    state.paid = [...goods]
+    toggleIdToState(state, 'add', 'paid', id)
   },
 }
 
 export const actions = {
-  async REQUEST_GET_GOODS({ state, commit }) {
+  async REQUEST_GET_GOODS({ commit }) {
     const { default: goods } = await import('@/assets/db.json')
     commit('SET_GOODS', goods)
   }
